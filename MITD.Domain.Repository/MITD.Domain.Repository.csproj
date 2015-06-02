@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{08054946-DB62-4C82-B0B1-49F4337626C2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MITD.Domain.Repository</RootNamespace>
+    <AssemblyName>MITD.Domain.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enums.cs" />
+    <Compile Include="FetchStrategy.cs" />
+    <Compile Include="IncludeItem.cs" />
+    <Compile Include="ListFetchStrategy.cs" />
+    <Compile Include="PageCriteria.cs" />
+    <Compile Include="PerThreadUnitOfWorkScope.cs" />
+    <Compile Include="SingleResultFetchStrategy.cs" />
+    <Compile Include="SortCriteria.cs" />
+    <Compile Include="IFetchStrategy.cs" />
+    <Compile Include="IListFetchStrategy.cs" />
+    <Compile Include="IPagingCriteria.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="ISingleResultFetchStrategy.cs" />
+    <Compile Include="ISortCriteria.cs" />
+    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="IUnitOfWorkFactory.cs" />
+    <Compile Include="IUnitOfWorkScope.cs" />
+    <Compile Include="PageResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringSortCriteria.cs" />
+    <Compile Include="UnitOfWorkScop.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MITD.Domain.Model\MITD.Domain.Model.csproj">
+      <Project>{43898715-C087-45C0-A4CA-7145E05C95B6}</Project>
+      <Name>MITD.Domain.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>Copy $(ProjectDir)$(OutDir)  $(SolutionDir)BuildDrop</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

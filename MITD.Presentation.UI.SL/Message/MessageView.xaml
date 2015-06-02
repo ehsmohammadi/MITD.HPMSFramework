@@ -1,0 +1,18 @@
+﻿<pr:ViewBase x:Class="MITD.Presentation.UI.Message.MessageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:pr="clr-namespace:MITD.Presentation.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="82" d:DesignWidth="300">
+    <Grid Width="300">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="31*" />
+        </Grid.RowDefinitions>
+        <TextBlock  VerticalAlignment="Top" TextWrapping="Wrap" Text="{Binding Message}"/>
+        <Button Content="{Binding OkCommand.DisplayName}" Command="{Binding OkCommand.Command}"  Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="112,5,0,0" Name="button1" VerticalAlignment="Top" Width="75" />
+    </Grid>
+</pr:ViewBase>

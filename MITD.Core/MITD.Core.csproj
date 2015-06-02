@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ABD6A578-54F4-4FD9-9553-A0C4D99F7DF0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MITD.Core</RootNamespace>
+    <AssemblyName>MITD.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Normal|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Normal\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Omu.ValueInjecter">
+      <HintPath>..\packages\ValueInjecter.2.3.3\lib\net35\Omu.ValueInjecter.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseMapper.cs" />
+    <Compile Include="Builders\BitConverterUtil.cs" />
+    <Compile Include="Builders\EqualsBuilder.cs" />
+    <Compile Include="Builders\HashCodeBuilder.cs" />
+    <Compile Include="Builders\MathUtil.cs" />
+    <Compile Include="Builders\ToStringBuilder.cs" />
+    <Compile Include="DateHelper\CalendarMode.cs" />
+    <Compile Include="DateHelper\Names.cs" />
+    <Compile Include="DateHelper\Numbers.cs" />
+    <Compile Include="DateHelper\PDateHelper.cs" />
+    <Compile Include="DelegateHandler.cs" />
+    <Compile Include="Enumeration.cs" />
+    <Compile Include="EventAggregator\EventHandlerOptions.cs" />
+    <Compile Include="EventAggregator\EventHandlers.cs" />
+    <Compile Include="EventAggregator\EventPublisher.cs" />
+    <Compile Include="EventAggregator\IEventAggregator.cs" />
+    <Compile Include="EventAggregator\IEventHandler.cs" />
+    <Compile Include="EventAggregator\IEventPublisher.cs" />
+    <Compile Include="EventAggregator\LatchManager.cs" />
+    <Compile Include="FilterMapper\BaseFilterMapper.cs" />
+    <Compile Include="FilterMapper\IFilterMapper.cs" />
+    <Compile Include="IFacadeService.cs" />
+    <Compile Include="IMapper.cs" />
+    <Compile Include="IMapper_PublicInterface.cs" />
+    <Compile Include="IService.cs" />
+    <Compile Include="IServiceLocatorProvider.cs" />
+    <Compile Include="Reveal.cs" />
+    <Compile Include="ServiceLifeCycleManager\IServiceLifeCycleManager.cs" />
+    <Compile Include="ServiceLifeCycleManager\ServiceLifeCycleManager.cs" />
+    <Compile Include="TypeExtensions.cs" />
+    <Compile Include="PredicateBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceLocator.cs" />
+    <Compile Include="UnknownPropertyException.cs" />
+    <Compile Include="ViMapper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Exceptions\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>Copy $(ProjectDir)$(OutDir)  $(SolutionDir)BuildDrop</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

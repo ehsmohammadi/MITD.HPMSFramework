@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B2E1D09C-5034-4069-87C2-940473322CE3}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MITD.Presentation</RootNamespace>
+    <AssemblyName>MITD.Presentation.SL</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>MITDFramework.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="system" />
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=5.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\MITD.Presentation\CommandViewModel.cs">
+      <Link>CommandViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\MITD.Presentation\DTOBase.cs">
+      <Link>DTOBase.cs</Link>
+    </Compile>
+    <Compile Include="..\MITD.Presentation\DTOBase_ViewModelBaseEx.cs">
+      <Link>DTOBase_ViewModelBaseEx.cs</Link>
+    </Compile>
+    <Compile Include="..\MITD.Presentation\ILocalizedResources.cs">
+      <Link>ILocalizedResources.cs</Link>
+    </Compile>
+    <Compile Include="..\MITD.Presentation\IServiceWrapper.cs">
+      <Link>IServiceWrapper.cs</Link>
+    </Compile>
+    <Compile Include="..\MITD.Presentation\IView.cs">
+      <Link>IView.cs</Link>
+    </Compile>
+    <Compile Include="..\MITD.Presentation\JsonCreationConverter.cs">
+      <Link>JsonCreationConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\MITD.Presentation\SortInfo.cs">
+      <Link>SortInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\MITD.Presentation\ViewModelBase.cs">
+      <Link>ViewModelBase.cs</Link>
+    </Compile>
+    <Compile Include="..\MITD.Presentation\WorkspaceViewModel.cs">
+      <Link>WorkspaceViewModel.cs</Link>
+    </Compile>
+    <Compile Include="ApplicationController.cs" />
+    <Compile Include="BusyIndicatorVM.cs" />
+    <Compile Include="DelegateCommand.cs" />
+    <Compile Include="DeploymentServiceWrapper.cs" />
+    <Compile Include="IApplicationController.cs" />
+    <Compile Include="IBootStrapper.cs" />
+    <Compile Include="IDeploymentManagement.cs" />
+    <Compile Include="IDeploymentServiceWrapper.cs" />
+    <Compile Include="IDialogView.cs" />
+    <Compile Include="IMessageView.cs" />
+    <Compile Include="IViewManager.cs" />
+    <Compile Include="PagedSortableCollectionView.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RefreshEventArgs.cs" />
+    <Compile Include="SortableCollectionView.cs" />
+    <Compile Include="WeakEvenHandlerManager.cs" />
+    <Compile Include="WebClientHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MITD.Core.SL\MITD.Core.SL.csproj">
+      <Project>{f903dfc2-f96e-4d84-baaf-f793ac979637}</Project>
+      <Name>MITD.Core.SL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MITD.Presentation.SL.extmap.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="MITDFramework.pfx" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>Copy $(ProjectDir)$(OutDir)  $(SolutionDir)BuildDrop</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

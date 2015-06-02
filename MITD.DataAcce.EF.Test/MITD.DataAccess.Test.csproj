@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{76574DDB-8EDE-4ABF-8696-B1C9E7189304}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MITD.DataAccess.Test</RootNamespace>
+    <AssemblyName>MITD.DataAccess.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NHRepositoryTest.cs" />
+    <Compile Include="EFRepositoryTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MITD.DataAccess.EF\MITD.DataAccess.EF.csproj">
+      <Project>{593C83CB-8F3C-4A0B-BA8C-306CDDDD3103}</Project>
+      <Name>MITD.DataAccess.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MITD.DataAccess.NH\MITD.DataAccess.NH.csproj">
+      <Project>{23cd3fa1-61e9-45e7-9d52-553f68da356f}</Project>
+      <Name>MITD.DataAccess.NH</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MITD.Domain.Model\MITD.Domain.Model.csproj">
+      <Project>{43898715-c087-45c0-a4ca-7145e05c95b6}</Project>
+      <Name>MITD.Domain.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MITD.Domain.Repository\MITD.Domain.Repository.csproj">
+      <Project>{08054946-DB62-4C82-B0B1-49F4337626C2}</Project>
+      <Name>MITD.Domain.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MITD.TestLayer.DataAccess.EF\MITD.TestLayer.DataAccess.EF.csproj">
+      <Project>{815303C7-B11D-4141-9C07-2A62716D4ACB}</Project>
+      <Name>MITD.TestLayer.DataAccess.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MITD.TestLayer.DataAccess.NH\MITD.TestLayer.DataAccess.NH.csproj">
+      <Project>{7aac79d5-65ac-424e-b202-c5cd1e568bd9}</Project>
+      <Name>MITD.TestLayer.DataAccess.NH</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MITD.TestLayer.Model\MITD.TestLayer.Model.csproj">
+      <Project>{c65aa38f-a7b5-4932-bf2f-24107f7d783c}</Project>
+      <Name>MITD.TestLayer.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app_data\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

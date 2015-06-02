@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B3AADB8D-DE5B-4F8D-96A3-1C559A80E11D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MITD.Presentation.UI</RootNamespace>
+    <AssemblyName>MITD.Presentation.UI.WPF</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataTimePicker\Brushes\CustomBrushes.cs" />
+    <Compile Include="DataTimePicker\Converters\ToPersianDateConverter.cs" />
+    <Compile Include="DataTimePicker\Converters\ToPersianNumberConverter.cs" />
+    <Compile Include="DataTimePicker\Models\CalendarGUI.cs" />
+    <Compile Include="DataTimePicker\Models\DayInfo.cs" />
+    <Compile Include="DataTimePicker\ViewModels\PCalendarViewModel.cs" />
+    <Compile Include="DataTimePicker\Views\PCalendar.xaml.cs">
+      <DependentUpon>PCalendar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataTimePicker\Views\PDatePicker.xaml.cs">
+      <DependentUpon>PDatePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MITD.Core\MITD.Core.csproj">
+      <Project>{ABD6A578-54F4-4FD9-9553-A0C4D99F7DF0}</Project>
+      <Name>MITD.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MITD.Presentation\MITD.Presentation.csproj">
+      <Project>{6ed66e98-2c3b-4c69-956c-4a9516766100}</Project>
+      <Name>MITD.Presentation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="DataTimePicker\Views\PCalendar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DataTimePicker\Views\PDatePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="DataTimePicker\Views\Themes\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DataTimePicker\Views\Images\date.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>Copy $(ProjectDir)$(OutDir)  $(SolutionDir)BuildDrop</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

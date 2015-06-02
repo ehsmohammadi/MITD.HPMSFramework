@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FCA18EAF-AB24-4469-ABDF-6A7EDFAFD899}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MITD.Domain.Repository.Web.Test</RootNamespace>
+    <AssemblyName>MITD.Domain.Repository.Web.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.3.0.1304.1\lib\Net45\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Unity.3.0.1304.1\lib\Net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Styles\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MITD.DataAccess.EF\MITD.DataAccess.EF.csproj">
+      <Project>{593C83CB-8F3C-4A0B-BA8C-306CDDDD3103}</Project>
+      <Name>MITD.DataAccess.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MITD.Domain.Model\MITD.Domain.Model.csproj">
+      <Project>{43898715-C087-45C0-A4CA-7145E05C95B6}</Project>
+      <Name>MITD.Domain.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MITD.Domain.Repository.Web\MITD.Domain.Repository.Web.csproj">
+      <Project>{83D46C9E-76C8-4A6E-8FD8-3DA4279FC59C}</Project>
+      <Name>MITD.Domain.Repository.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MITD.Domain.Repository\MITD.Domain.Repository.csproj">
+      <Project>{08054946-DB62-4C82-B0B1-49F4337626C2}</Project>
+      <Name>MITD.Domain.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MITD.TestLayer.DataAccess.EF\MITD.TestLayer.DataAccess.EF.csproj">
+      <Project>{815303C7-B11D-4141-9C07-2A62716D4ACB}</Project>
+      <Name>MITD.TestLayer.DataAccess.EF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MITD.TestLayer.Model\MITD.TestLayer.Model.csproj">
+      <Project>{c65aa38f-a7b5-4932-bf2f-24107f7d783c}</Project>
+      <Name>MITD.TestLayer.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>20465</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>Copy $(ProjectDir)$(OutDir)  $(SolutionDir)BuildDrop</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

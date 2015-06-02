@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B1FFECE4-B768-419D-AC31-837E0A759369}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MITD.Core.RuleEngine</RootNamespace>
+    <AssemblyName>MITD.Core.RuleEngine</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IRuleFunctionRepository.cs" />
+    <Compile Include="IREConfigeRepository.cs" />
+    <Compile Include="IRuleRepository.cs" />
+    <Compile Include="IRuleResult.cs" />
+    <Compile Include="IRuleResultCleaner.cs" />
+    <Compile Include="IRuleService.cs" />
+    <Compile Include="Model\CustomExceptions.cs" />
+    <Compile Include="Model\RuleBase.cs" />
+    <Compile Include="Model\RuleFunction.cs" />
+    <Compile Include="Model\RuleFunctionTrail.cs" />
+    <Compile Include="Model\RuleFunctionId.cs" />
+    <Compile Include="Model\Rule.cs" />
+    <Compile Include="Model\RuleEngineConfigurationItem.cs" />
+    <Compile Include="Model\RuleFunctionBase.cs" />
+    <Compile Include="Model\RuleId.cs" />
+    <Compile Include="CodeDomCompilerHelper.cs" />
+    <Compile Include="IRule.cs" />
+    <Compile Include="Model\RuleEngineConfigurationItemId.cs" />
+    <Compile Include="Model\RuleTrail.cs" />
+    <Compile Include="Model\RuleType.cs" />
+    <Compile Include="RuleCompileResult.cs" />
+    <Compile Include="RuleEngineAdapter.cs" />
+    <Compile Include="RuleEngineService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MITD.Core\MITD.Core.csproj">
+      <Project>{abd6a578-54f4-4fd9-9553-a0c4d99f7df0}</Project>
+      <Name>MITD.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MITD.Domain.Model\MITD.Domain.Model.csproj">
+      <Project>{43898715-c087-45c0-a4ca-7145e05c95b6}</Project>
+      <Name>MITD.Domain.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MITD.Domain.Repository\MITD.Domain.Repository.csproj">
+      <Project>{08054946-db62-4c82-b0b1-49f4337626c2}</Project>
+      <Name>MITD.Domain.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>Copy $(ProjectDir)$(OutDir)  $(SolutionDir)BuildDrop</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

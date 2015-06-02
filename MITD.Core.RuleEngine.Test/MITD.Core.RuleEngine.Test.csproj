@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F5E2ABB-3164-4588-8832-44C137F9BDAF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MITD.Core.RuleEngine.Test</RootNamespace>
+    <AssemblyName>MITD.Core.RuleEngine.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="RuleEngineSessionTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MITD.Core.RuleEngine.NH\MITD.Core.RuleEngine.NH.csproj">
+      <Project>{588b0512-8f26-454c-b72c-a38e9b5fd129}</Project>
+      <Name>MITD.Core.RuleEngine.NH</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MITD.Core.RuleEngine\MITD.Core.RuleEngine.csproj">
+      <Project>{b1ffece4-b768-419d-ac31-837e0a759369}</Project>
+      <Name>MITD.Core.RuleEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MITD.Core\MITD.Core.csproj">
+      <Project>{abd6a578-54f4-4fd9-9553-a0c4d99f7df0}</Project>
+      <Name>MITD.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MITD.DataAccess.NH\MITD.DataAccess.NH.csproj">
+      <Project>{23cd3fa1-61e9-45e7-9d52-553f68da356f}</Project>
+      <Name>MITD.DataAccess.NH</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MITD.Domain.Model\MITD.Domain.Model.csproj">
+      <Project>{43898715-c087-45c0-a4ca-7145e05c95b6}</Project>
+      <Name>MITD.Domain.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MITD.Domain.Repository\MITD.Domain.Repository.csproj">
+      <Project>{08054946-db62-4c82-b0b1-49f4337626c2}</Project>
+      <Name>MITD.Domain.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

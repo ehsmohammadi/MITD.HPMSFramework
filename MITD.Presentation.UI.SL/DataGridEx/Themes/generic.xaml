@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dataprimitives="clr-namespace:System.Windows.Controls.Primitives;assembly=System.Windows.Controls.Data"
+    >
+    <DataTemplate x:Key="headerTemplate">
+        <Button  HorizontalAlignment="Stretch" Command="{Binding SortCommand}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <sdk:Label Content="{Binding DisplayName}"/>
+                <Image Source="{Binding SortIcon}"  Grid.Column="1" HorizontalAlignment="Right"/>
+            </Grid>
+        </Button>
+    </DataTemplate>
+    <Style x:Key="myColHeader" TargetType="dataprimitives:DataGridColumnHeader">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="dataprimitives:DataGridColumnHeader">
+                    <ContentPresenter ContentTemplate="{StaticResource headerTemplate}">
+                    </ContentPresenter>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="TestSilverlightControls.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dp="clr-namespace:MITD.Presentation.UI.DateTimePicker.Views;assembly=MITD.Presentation.UI.SL"
+    xmlns:ic="clr-namespace:MITD.Presentation.UI;assembly=MITD.Presentation.UI.SL"
+    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+    xmlns:interactivity="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:behave="clr-namespace:MITD.Presentation.UI.Behaviors;assembly=MITD.Presentation.UI.SL"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400" 
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit" 
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    
+    <UserControl.Resources>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="White" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="" SourceName="" >
+                <ic:ExtendedInvokeCommandAction></ic:ExtendedInvokeCommandAction>
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+        <StackPanel>
+           
+            <dp:PDatePicker SelectedDate="{Binding SelectedDate, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" HorizontalAlignment="Left"> </dp:PDatePicker>
+            <Button Content="reset" Click="Button_Click" HorizontalAlignment="Left"/>
+            <TextBox Text="salam" HorizontalAlignment="Left"/>
+            <ic:MaskedEdit  Mask="iiiiii" Text="{Binding MaskedText, Mode=TwoWay, ValidatesOnDataErrors=True, NotifyOnValidationError=True}" HorizontalAlignment="Left"/>
+            <sdk:DataGrid AutoGenerateColumns="False" Height="107" Name="dataGrid1" Width="240" RowDetailsVisibilityMode="Visible" >
+                <sdk:DataGrid.RowDetailsTemplate> 
+                    <DataTemplate>
+                            <sdk:DataGrid AutoGenerateColumns="False" ItemsSource="{Binding subData}">
+                                <sdk:DataGrid.Columns>
+                                    <sdk:DataGridTextColumn CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" Header="col1" Binding="{Binding id}" />
+                                    <sdk:DataGridTextColumn CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" Header="col2" Binding="{Binding name}"/>
+                                </sdk:DataGrid.Columns>
+                            </sdk:DataGrid>
+                    </DataTemplate>
+                </sdk:DataGrid.RowDetailsTemplate>
+                <sdk:DataGrid.Columns>
+                    <sdk:DataGridTemplateColumn CanUserReorder="True" CanUserResize="True" CanUserSort="True" Width="Auto" >
+                        <sdk:DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ToggleButton Content="+" Loaded="Button_Loaded" Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked" />
+                            </DataTemplate>
+                        </sdk:DataGridTemplateColumn.CellTemplate>
+                    </sdk:DataGridTemplateColumn>
+                    <sdk:DataGridTextColumn CanUserReorder="True" CanUserResize="True" CanUserSort="True" Header="id" Width="Auto" Binding="{Binding id, Mode=TwoWay}" />
+                    <sdk:DataGridTextColumn CanUserReorder="True" CanUserResize="True" CanUserSort="True" Header="name" IsReadOnly="False" Width="Auto" Binding="{Binding name, Mode=TwoWay}" />
+                </sdk:DataGrid.Columns>
+            </sdk:DataGrid>
+            <Button Content="Show Message" HorizontalAlignment="Left" Click="Button_Click_1"/>
+            <StackPanel x:Name="message"/>
+        </StackPanel>
+        <sdk:ValidationSummary  Grid.Row="1" HorizontalAlignment="Left" />
+    </Grid>
+</UserControl>

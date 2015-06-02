@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2A30F639-910C-4BD3-BCE7-CE36EA7D7D4F}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MITD.Presentation.UI</RootNamespace>
+    <AssemblyName>MITD.Presentation.UI.SL</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the 
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs 
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>MITDFramework.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="System.ComponentModel.DataAnnotations, Version=5.0.5.0, Culture=neutral, PublicKeyToken=ddd0da4d3e678217, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.ComponentModel.DataAnnotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Data.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Windows.Controls.Data.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Data.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit.Internals, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Interactivity, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dependency\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Microsoft SDKs\Silverlight\v5.0\Libraries\Client\System.Xml.Linq.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\MITD.Presentation.UI.WPF\DataTimePicker\Brushes\CustomBrushes.cs">
+      <Link>DateTimePicker\Brushes\CustomBrushes.cs</Link>
+    </Compile>
+    <Compile Include="..\MITD.Presentation.UI.WPF\DataTimePicker\Converters\ToPersianDateConverter.cs">
+      <Link>DateTimePicker\Converters\ToPersianDateConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\MITD.Presentation.UI.WPF\DataTimePicker\Converters\ToPersianNumberConverter.cs">
+      <Link>DateTimePicker\Converters\ToPersianNumberConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\MITD.Presentation.UI.WPF\DataTimePicker\Models\CalendarGUI.cs">
+      <Link>DateTimePicker\Models\CalendarGUI.cs</Link>
+    </Compile>
+    <Compile Include="..\MITD.Presentation.UI.WPF\DataTimePicker\Models\DayInfo.cs">
+      <Link>DateTimePicker\Models\DayInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\MITD.Presentation.UI.WPF\DataTimePicker\ViewModels\PCalendarViewModel.cs">
+      <Link>DateTimePicker\ViewModels\PCalendarViewModel.cs</Link>
+    </Compile>
+    <Compile Include="Behaviors\Popup.cs" />
+    <Compile Include="Behaviors\TextBoxFarsiBehavior.cs" />
+    <Compile Include="DefaultButtonService.cs" />
+    <Compile Include="ComboBoxEx\ComboBoxEx.cs" />
+    <Compile Include="Components\UniformGrid.cs" />
+    <Compile Include="Converter\DefaultConverter.cs" />
+    <Compile Include="CustomActions\ExtendedInvokeCommandAction.cs" />
+    <Compile Include="CustomDataPager.cs" />
+    <Compile Include="DataGridEx\DataGridEx.cs" />
+    <Compile Include="DateTimePicker\Views\PCalendar.xaml.cs">
+      <DependentUpon>PCalendar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DateTimePicker\Views\PDatePicker.xaml.cs">
+      <DependentUpon>PDatePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeploymentService\DeploymentModule.cs" />
+    <Compile Include="DeploymentService\DeploymentManagement.cs" />
+    <Compile Include="DeploymentService\InstanceRequest.cs" />
+    <Compile Include="IMainView.cs" />
+    <Compile Include="IViewWithContextMenu.cs" />
+    <Compile Include="MaskedEdit\MaskedTextBox.cs" />
+    <Compile Include="Message\MessageView.xaml.cs">
+      <DependentUpon>MessageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Message\MessageVM.cs" />
+    <Compile Include="OutlookBarPanel\InteractionHelper.cs" />
+    <Compile Include="OutlookBarPanel\IUpdateVisualState.cs" />
+    <Compile Include="OutlookBarPanel\OutlookBar.cs" />
+    <Compile Include="OutlookBarPanel\OutlookBarButton.cs" />
+    <Compile Include="OutlookBarPanel\OutlookBarFooterTrayButton.cs" />
+    <Compile Include="OutlookBarPanel\OutlookBarGridSplitter.cs" />
+    <Compile Include="OutlookBarPanel\OutlookBarGridSplitterDragValidator.cs" />
+    <Compile Include="OutlookBarPanel\OutlookBarGridSplitterPreviewControl.cs" />
+    <Compile Include="OutlookBarPanel\SplitterDraggedEventArgs.cs" />
+    <Compile Include="OutlookBarPanel\VisualStates.cs" />
+    <Compile Include="Properties\ApplicationStrings1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApplicationStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SilverLightTreeView\SilverlightTreeView.cs" />
+    <Compile Include="SilverLightTreeView\SilverlightTreeViewItem.cs" />
+    <Compile Include="ViewBase.cs" />
+    <Compile Include="ViewManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MITD.Core.SL\MITD.Core.SL.csproj">
+      <Project>{F903DFC2-F96E-4D84-BAAF-F793AC979637}</Project>
+      <Name>MITD.Core.SL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MITD.Presentation.SL\MITD.Presentation.SL.csproj">
+      <Project>{B2E1D09C-5034-4069-87C2-940473322CE3}</Project>
+      <Name>MITD.Presentation.SL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Message\MessageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="DataGridEx\Themes\generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Page Include="DateTimePicker\Views\PCalendar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DateTimePicker\Views\PDatePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="Themes\generic.xaml">
+      <SubType>Designer</SubType>
+    </Resource>
+    <Resource Include="DateTimePicker\Views\Themes\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DateTimePicker\Views\Images\date.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\ApplicationStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ApplicationStrings1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="DataGridEx\Images\1downarrow.png" />
+    <Resource Include="DataGridEx\Images\1uparrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MITDFramework.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MITD.Presentation.UI.SL.extmap.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>Copy $(ProjectDir)$(OutDir)  $(SolutionDir)BuildDrop</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
